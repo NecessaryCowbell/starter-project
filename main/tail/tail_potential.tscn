@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://chcwonry85uu4"]
+
+[ext_resource type="Script" path="res://main/tail/tailPotential.gd" id="1_kumn2"]
+[ext_resource type="PackedScene" uid="uid://bn4j746c553ji" path="res://main/tail/tailSegment.tscn" id="2_hkc1p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irvc1"]
+size = Vector2(62, 62)
+
+[node name="tailPotential" type="Area2D" node_paths=PackedStringArray("tailSegment")]
+scale = Vector2(0.25, 0.25)
+collision_layer = 8
+collision_mask = 16
+script = ExtResource("1_kumn2")
+tailSegment = NodePath("tailSegment")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_irvc1")
+
+[node name="tailSegment" parent="." instance=ExtResource("2_hkc1p")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyhl6wpjdqt8k"]
+
+[ext_resource type="TileSet" uid="uid://bpkujt1lxkwj6" path="res://main/terrain/tile_set.tres" id="1_itnou"]
+
+[node name="TileMap" type="TileMap"]
+tile_set = ExtResource("1_itnou")
+format = 2
+metadata/_edit_lock_ = true

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu118c315sxl0"]
+
+[ext_resource type="Script" path="res://main/fruit/fruit.gd" id="1_tydnk"]
+[ext_resource type="Texture2D" uid="uid://b8wvc1qhimmw8" path="res://main/fruit/redCircle.png" id="2_owj1m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_opbaw"]
+radius = 16.1245
+
+[node name="fruit" type="Area2D"]
+collision_layer = 4
+collision_mask = 16
+script = ExtResource("1_tydnk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_opbaw")
+
+[node name="RedCircle" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_owj1m")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

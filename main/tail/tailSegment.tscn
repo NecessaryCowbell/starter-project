@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn4j746c553ji"]
+
+[ext_resource type="Script" path="res://main/tail/tailSegment.gd" id="1_3gkoy"]
+[ext_resource type="Texture2D" uid="uid://d4muy25drpj5v" path="res://main/tail/blueBox.png" id="2_ivfyb"]
+[ext_resource type="Texture2D" uid="uid://cxp2jq28kocbd" path="res://main/terrain/redBox.png" id="3_3namu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6u052"]
+size = Vector2(64, 63)
+
+[node name="tailSegment" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 16
+script = ExtResource("1_3gkoy")
+normal_texture = ExtResource("2_ivfyb")
+highlight_texture = ExtResource("3_3namu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_6u052")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_ivfyb")
