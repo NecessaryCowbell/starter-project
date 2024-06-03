@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+#test 
+
 @export_category("node links")
 @export var ui: Node = null
 
